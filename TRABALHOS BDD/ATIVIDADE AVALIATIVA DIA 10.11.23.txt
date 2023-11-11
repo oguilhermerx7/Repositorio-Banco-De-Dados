@@ -1,0 +1,37 @@
+create database tarefa;
+use tarefa;
+
+create table pai(
+cod_pai int auto increment,
+nomepai varchar (50),
+telefonepai float,
+primary key(cod_pai));
+
+create table mae(
+cod_mae int auto increment,
+nomemae varchar (50),
+telefonemae float,
+primary key(cod_mae));
+
+create table filho(
+cod_filho int auto increment,
+nomefilho varchar (50),
+pai_cod int not null,
+mae_cod int not null,
+foreign key(pai_cod) references pai(cod_pai),
+foreign key(mae_cod) references mae(cod_mae));
+
+INSERT INTO pai (nomepai, telefonepai) VALUES ('Nome do Pai', 123456789);
+*fazer isso com 3 pais e 3 id diferente*
+INSERT INTO mae (nomemae, telefonemae) VALUES ('Nome do Mae', 123456789);
+*fazer isso com 3 maes e 3 id diferente*
+
+INSERT INTO pai (nomefilho) VALUES ('Nome do Filho', (id do 1 ao 3);
+*fazer isso 9x com o nome dos filhos e ids diferentes*
+
+APÓS INSERIR OS DADOS FAZER AS CONSULTAS
+
+SELECT filho.cod_filho, filho.nomefilho, pai.nomepai, mae.nomemae
+FROM filho
+INNER JOIN pai ON filho.pai_cod = pai.cod_pai
+INNER JOIN mae ON filho.mae_cod = mae.cod_mae;
