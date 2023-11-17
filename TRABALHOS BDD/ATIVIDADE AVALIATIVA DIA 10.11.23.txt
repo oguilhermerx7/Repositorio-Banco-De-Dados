@@ -8,13 +8,13 @@ telefonepai float,
 primary key(cod_pai));
 
 create table mae(
-cod_mae int auto increment,
+cod_mae int auto_increment,
 nomemae varchar (50),
 telefonemae float,
 primary key(cod_mae));
 
 create table filho(
-cod_filho int auto increment,
+cod_filho int auto_increment,
 nomefilho varchar (50),
 pai_cod int not null,
 mae_cod int not null,
@@ -22,11 +22,11 @@ foreign key(pai_cod) references pai(cod_pai),
 foreign key(mae_cod) references mae(cod_mae));
 
 INSERT INTO pai (nomepai, telefonepai) VALUES ('Nome do Pai', 123456789);
-*fazer isso com 3 pais e 3 id diferente*
+*fazer isso com 3 pais 
 INSERT INTO mae (nomemae, telefonemae) VALUES ('Nome do Mae', 123456789);
-*fazer isso com 3 maes e 3 id diferente*
+*fazer isso com 3 maes 
 
-INSERT INTO pai (nomefilho) VALUES ('Nome do Filho', (id do 1 ao 3);
+INSERT INTO filho (nomefilho,pai_cod,mae_cod) VALUES ('Nome do Filho', (id do 1 ao 3);
 *fazer isso 9x com o nome dos filhos e ids diferentes*
 
 APÓS INSERIR OS DADOS FAZER AS CONSULTAS
